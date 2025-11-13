@@ -117,18 +117,56 @@ document.querySelectorAll(".bottom-nav a").forEach(a => {
   if (a.getAttribute("href") === current) a.classList.add("active");
 });
 
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  const overlay = document.getElementById('overlay');
-  const isOpen = menu.style.transform === 'translateX(0%)';
+// THEME TOGGLE (يشغل على كل الصفحات)
+(function() {
+  const THEME_KEY = 'amoory_theme'; // مفتاح التخزين
+  const toggleButtons = document.querySelectorAll('#themeToggle, .theme-toggle'); // يدعم id أو class
+  const root = document.documentElement; // نضع data-theme على <html>
 
-  if (isOpen) {
-    menu.style.transform = 'translateX(100%)';
-    overlay.style.opacity = '0';
-    overlay.style.visibility = 'hidden';
-  } else {
-    menu.style.transform = 'translateX(0%)';
-    overlay.style.opacity = '1';
-    overlay.style.visibility = 'visible';
+  // تهيئة الوضع عند التحميل
+  function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      setToggleIcon('dark');
+    } else {
+      root.removeAttribute('data-theme');
+      setToggleIcon('light');
+    }
   }
-}
+
+  // تغيير أيقونة الزر حسب الوضع
+  function setToggleIcon(mode) {
+    toggleButtons.forEach(btn => {
+      if (!btn) return;
+      btn.textContent = (mode === 'dark') ? '☀️' : '🌙';
+      btn.setAttribute('aria-pressed', mode === 'dark');
+    });
+  }
+
+  // تبديل الوضع
+  function toggleTheme() {
+    const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    if (next === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem(THEME_KEY, 'dark');
+    } else {
+      root.removeAttribute('data-theme');
+      localStorage.setItem(THEME_KEY, 'light');
+    }
+    setToggleIcon(next);
+  }
+
+  // ربط الأزرار
+  toggleButtons.forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleTheme();
+    });
+  });
+
+  // init
+  document.addEventListener('DOMContentLoaded', initTheme);
+})();

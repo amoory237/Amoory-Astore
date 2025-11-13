@@ -971,3 +971,63 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 4px;
 }
 
+/* ===== نظام ألوان قابل للتبديل (Light / Dark) ===== */
+/* قيم الوضع الافتراضي (نهاري) */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --primary: #0d6efd; /* لون الأزرار/روابط */
+  --card: #ffffff;
+  --muted: #666666;
+  --header-bg: linear-gradient(90deg, #0d6efd, #003366);
+  --footer-bg: #003366;
+}
+
+/* قيم الوضع الداكن */
+[data-theme="dark"] {
+  --bg: #0b0c10;
+  --text: #e9eef6;
+  --primary: #00bcd4;
+  --card: #1c1c1c;
+  --muted: #9aa6b2;
+  --header-bg: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  --footer-bg: #101010;
+}
+
+/* تطبيق المتغيرات العامة */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* أمثلة سريعة لتطبيق الألوان في عناصر شائعة */
+.header {
+  background: var(--header-bg);
+}
+
+.footer {
+  background: var(--footer-bg);
+  color: var(--text);
+}
+
+.card, .wallet-box {
+  background: var(--card);
+  color: var(--text);
+}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* شكل زر التبديل */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text);
+  padding: 6px;
+  border-radius: 8px;
+}
+.theme-toggle:hover { transform: scale(1.05); }
