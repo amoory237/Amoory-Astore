@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMOORY_STORE - متجر الألعاب والبطاقات الرقمية</title>
+    <meta name="description" content="متجر AMOORY_STORE لشحن شدات ببجي وبطاقات iTunes و PlayStation وجميع البطاقات الرقمية بأفضل الأسعار وشحن فوري وآمن 100%">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-right">
+                    <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="logo">AMOORY_STORE</a>
+                </div>
+
+                <nav class="nav" id="mainNav">
+                    <a href="#categories" class="nav-link">الفئات</a>
+                    <a href="#offers" class="nav-link">العروض</a>
+                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                    <a href="admin.html" class="nav-link">الإدارة</a>
+                </nav>
+
+                <div class="header-left">
+                    <div class="search-box">
+                        <input type="search" placeholder="ابحث عن المنتجات..." class="search-input" id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <button class="icon-btn search-btn-mobile" id="searchBtnMobile" aria-label="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">أفضل متجر للبطاقات الرقمية</h1>
+            <p class="hero-subtitle">شحن شدات ببجي، بطاقات iTunes، PlayStation وجميع البطاقات الرقمية بأسرع وقت وأفضل الأسعار</p>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary">تسوق الآن</button>
+                <button class="btn btn-outline">عرض العروض</button>
+            </div>
+
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>شحن فوري</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>أمان 100%</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>أفضل الأسعار</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <!-- Category Filters -->
+                <div class="filter-group">
+                    <label class="filter-label">الفئة:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all" data-testid="filter-category-all">
+                            <i class="fas fa-th"></i>
+                            الكل
+                        </button>
+                        <button class="filter-btn" data-category="pubg" data-testid="filter-category-pubg">
+                            <i class="fas fa-gamepad"></i>
+                            ببجي
+                        </button>
+                        <button class="filter-btn" data-category="itunes" data-testid="filter-category-itunes">
+                            <i class="fab fa-apple"></i>
+                            iTunes
+                        </button>
+                        <button class="filter-btn" data-category="playstation" data-testid="filter-category-playstation">
+                            <i class="fab fa-playstation"></i>
+                            PlayStation
+                        </button>
+                        <button class="filter-btn" data-category="xbox" data-testid="filter-category-xbox">
+                            <i class="fab fa-xbox"></i>
+                            Xbox
+                        </button>
+                        <button class="filter-btn" data-category="google" data-testid="filter-category-google">
+                            <i class="fab fa-google-play"></i>
+                            Google Play
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sort Filters -->
+                <div class="filter-group">
+                    <label class="filter-label">الترتيب:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-sort="bestseller" data-testid="filter-sort-bestseller">
+                            <i class="fas fa-fire"></i>
+                            الأكثر مبيعاً
+                        </button>
+                        <button class="filter-btn" data-sort="newest" data-testid="filter-sort-newest">
+                            <i class="fas fa-star"></i>
+                            الأحدث
+                        </button>
+                        <button class="filter-btn" data-sort="price-low" data-testid="filter-sort-price-low">
+                            <i class="fas fa-arrow-down"></i>
+                            الأرخص
+                        </button>
+                        <button class="filter-btn" data-sort="price-high" data-testid="filter-sort-price-high">
+                            <i class="fas fa-arrow-up"></i>
+                            الأغلى
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">نطاق السعر:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-price="all" data-testid="filter-price-all">
+                            الكل
+                        </button>
+                        <button class="filter-btn" data-price="0-50" data-testid="filter-price-0-50">
+                            أقل من 50 ريال
+                        </button>
+                        <button class="filter-btn" data-price="50-100" data-testid="filter-price-50-100">
+                            50-100 ريال
+                        </button>
+                        <button class="filter-btn" data-price="100-200" data-testid="filter-price-100-200">
+                            100-200 ريال
+                        </button>
+                        <button class="filter-btn" data-price="200+" data-testid="filter-price-200">
+                            أكثر من 200 ريال
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Counter -->
+                <div class="results-counter" id="resultsCounter" data-testid="results-counter">
+                    <i class="fas fa-box-open"></i>
+                    <span id="resultsCount">جاري التحميل...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtered Products Section -->
+    <section class="section" id="filteredProductsSection" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <i class="fas fa-filter section-icon"></i>
+                    <h2 class="section-title">نتائج البحث والتصفية</h2>
+                </div>
+                <button class="btn btn-outline" id="clearFiltersBtn" data-testid="button-clear-filters">
+                    <i class="fas fa-times"></i>
+                    إلغاء التصفية
+                </button>
+            </div>
+
+            <div class="products-grid" id="filteredProducts">
+                <!-- Filtered products will be loaded by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;" data-testid="no-results">
+                <i class="fas fa-search"></i>
+                <h3>لا توجد منتجات</h3>
+                <p>لم نجد أي منتجات تطابق معايير البحث والتصفية</p>
+                <button class="btn btn-primary" onclick="clearAllFilters()" data-testid="button-reset-filters">
+                    <i class="fas fa-redo"></i>
+                    إعادة تعيين التصفية
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="section section-gray" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الفئات الرئيسية</h2>
+                <p class="section-subtitle">اختر من بين مجموعة واسعة من البطاقات الرقمية</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" data-category="pubg">
+                    <div class="category-image">
+                        <img src="images/pubg.png" alt="شدات ببجي" onerror="this.src='https://via.placeholder.com/400x400/7c3aed/ffffff?text=PUBG'">
+                    </div>
+                    <h3 class="category-name">شدات ببجي</h3>
+                </div>
+                <div class="category-card" data-category="itunes">
+                    <div class="category-image">
+                        <img src="images/itunes.png" alt="بطاقات iTunes" onerror="this.src='https://via.placeholder.com/400x400/ec4899/ffffff?text=iTunes'">
+                    </div>
+                    <h3 class="category-name">بطاقات iTunes</h3>
+                </div>
+                <div class="category-card" data-category="playstation">
+                    <div class="category-image">
+                        <img src="images/playstation.png" alt="بطاقات PlayStation" onerror="this.src='https://via.placeholder.com/400x400/3b82f6/ffffff?text=PS'">
+                    </div>
+                    <h3 class="category-name">بطاقات PlayStation</h3>
+                </div>
+                <div class="category-card" data-category="google">
+                    <div class="category-image">
+                        <img src="images/google-play.png" alt="بطاقات Google Play" onerror="this.src='https://via.placeholder.com/400x400/10b981/ffffff?text=Google'">
+                    </div>
+                    <h3 class="category-name">بطاقات Google Play</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <i class="fas fa-gamepad section-icon"></i>
+                    <h2 class="section-title">المنتجات الأكثر مبيعاً</h2>
+                </div>
+                <a href="#" class="view-all-link">
+                    عرض الكل
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+
+            <div class="products-grid" id="bestSellers">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">لماذا نحن الخيار الأفضل؟</h2>
+                <p class="section-subtitle">نوفر لك تجربة تسوق آمنة وسريعة مع أفضل الأسعار في السوق</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">شحن فوري</h3>
+                    <p class="feature-desc">نضمن لك استلام طلبك خلال دقائق معدودة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">أمان تام</h3>
+                    <p class="feature-desc">جميع المعاملات مشفرة ومؤمنة 100%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">دعم 24/7</h3>
+                    <p class="feature-desc">فريق الدعم متواجد على مدار الساعة لخدمتك</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">+10,000 عميل سعيد</h3>
+                    <p class="feature-desc">ثقة آلاف العملاء على مدار السنوات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="section" id="offers">
+        <div class="container">
+            <div class="offers-banner">
+                <div class="offers-overlay"></div>
+                <div class="offers-content">
+                    <div class="offers-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>عروض حصرية</span>
+                    </div>
+                    <h2 class="offers-title">خصومات تصل إلى 40%</h2>
+                    <p class="offers-subtitle">استمتع بأفضل العروض على جميع البطاقات الرقمية لفترة محدودة</p>
+                    <button class="btn btn-secondary">اكتشف العروض</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <i class="fas fa-gift section-icon"></i>
+                    <h2 class="section-title">بطاقات الهدايا</h2>
+                </div>
+                <a href="#" class="view-all-link">
+                    عرض الكل
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+
+            <div class="products-grid" id="giftCards">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
+                <p class="section-subtitle">آراء عملائنا الكرام تهمنا</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">أع</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">أحمد العتيبي</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">أفضل متجر، التعامل معهم من 4 سنين. سريع ومضمون وما شاء الله عليهم</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">فم</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">فاطمة محمد</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">متجر موثوق وسرعة في الشحن. دائماً أطلب منهم ولا أذهب لغيرهم</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">خس</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">خالد السعيد</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">شكراً على تعاملكم الصادق. أفضل الأسعار وخدمة ممتازة</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">نح</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">نورة الحربي</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">والله رهيبين. الشحن سريع جداً والأسعار مناسبة. أنصح الجميع بالتعامل معهم</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">عق</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">عبدالله القحطاني</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">متجر ممتاز ومصداقية عالية. تعاملت معهم أكثر من مرة ودائماً راضي</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">سد</div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">سارة الدوسري</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">سرعة في التنفيذ وقمة في الرقي. شكراً لكم على الخدمة الممتازة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">AMOORY_STORE</h3>
+                    <p class="footer-desc">متجرك الموثوق لجميع البطاقات الرقمية والشحن الفوري</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Snapchat">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اتصل بنا</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+24999200203</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@amoorystore.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اشترك في النشرة البريدية</h4>
+                    <p class="footer-newsletter-desc">احصل على آخر العروض والتحديثات</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="البريد الإلكتروني" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-primary">اشترك</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 AMOORY_STORE. جميع الحقوق محفوظة</p>
+                <p class="footer-payment">طرق الدفع: مدى - فيزا - ماستر كارد</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">سلة التسوق</h3>
+                <button class="modal-close" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ريال</span>
+                </div>
+                <button class="btn btn-primary btn-block" onclick="goToCheckout()">إتمام الشراء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/24999200203" 
+       target="_blank" 
+       class="whatsapp-float" 
+       onclick="openWhatsAppSupport(); return false;"
+       aria-label="تواصل معنا عبر واتساب">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

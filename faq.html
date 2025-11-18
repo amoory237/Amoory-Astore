@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة - AMOORY_STORE</title>
+    <meta name="description" content="إجابات على جميع أسئلتك حول شحن الشدات، طرق الدفع، سياسة الاسترجاع، أوقات التسليم والمزيد">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-right">
+                    <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="logo">AMOORY_STORE</a>
+                </div>
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#categories" class="nav-link">الفئات</a>
+                    <a href="index.html#offers" class="nav-link">العروض</a>
+                    <a href="index.html#contact" class="nav-link">اتصل بنا</a>
+                    <a href="about.html" class="nav-link">من نحن</a>
+                    <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+                </nav>
+
+                <div class="header-left">
+                    <div class="search-box">
+                        <input type="search" placeholder="ابحث عن المنتجات..." class="search-input" id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <button class="icon-btn search-btn-mobile" id="searchBtnMobile" aria-label="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a>
+                <i class="fas fa-chevron-left breadcrumb-separator"></i>
+                <span class="breadcrumb-current">الأسئلة الشائعة</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero hero-small">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">الأسئلة الشائعة</h1>
+            <p class="hero-subtitle">إجابات على جميع استفساراتك حول خدماتنا ومنتجاتنا</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="faq-container">
+                <!-- Shipping & Delivery -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-shipping-fast"></i>
+                        الشحن والتسليم
+                    </h2>
+                    
+                    <div class="faq-item" data-testid="faq-item-1">
+                        <button class="faq-question" data-testid="faq-question-1">
+                            <span>كم يستغرق وقت التسليم؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نحن نفخر بتقديم خدمة شحن فوري! معظم الطلبات يتم تسليمها خلال 1-5 دقائق من إتمام الدفع. في بعض الحالات النادرة، قد يستغرق التسليم حتى 30 دقيقة كحد أقصى.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-2">
+                        <button class="faq-question" data-testid="faq-question-2">
+                            <span>هل الشحن مجاني؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم! جميع منتجاتنا الرقمية يتم تسليمها فورياً بدون أي رسوم شحن إضافية. السعر المعروض هو السعر النهائي.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-3">
+                        <button class="faq-question" data-testid="faq-question-3">
+                            <span>كيف أستلم طلبي؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>بعد إتمام الدفع، ستصلك رسالة نصية (SMS) ورسالة عبر البريد الإلكتروني تحتوي على تفاصيل المنتج وكود الاستخدام. يمكنك أيضاً تحميل الطلب من حسابك على الموقع.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-credit-card"></i>
+                        طرق الدفع
+                    </h2>
+                    
+                    <div class="faq-item" data-testid="faq-item-4">
+                        <button class="faq-question" data-testid="faq-question-4">
+                            <span>ما هي طرق الدفع المتاحة؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نقبل جميع طرق الدفع التالية:</p>
+                            <ul>
+                                <li>مدى (بطاقات البنوك السعودية)</li>
+                                <li>فيزا</li>
+                                <li>ماستر كارد</li>
+                                <li>Apple Pay</li>
+                                <li>STC Pay</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-5">
+                        <button class="faq-question" data-testid="faq-question-5">
+                            <span>هل الدفع آمن؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم تماماً! جميع المعاملات مشفرة بتقنية SSL 256-bit ونستخدم بوابات دفع معتمدة ومرخصة من البنك المركزي السعودي. نحن لا نحتفظ ببيانات بطاقتك الائتمانية على خوادمنا.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-6">
+                        <button class="faq-question" data-testid="faq-question-6">
+                            <span>هل يمكنني الدفع عند الاستلام؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نظراً لطبيعة منتجاتنا الرقمية والتسليم الفوري، نطلب الدفع المسبق عبر الإنترنت فقط. هذا يضمن سرعة وأمان المعاملة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Returns & Refunds -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-undo-alt"></i>
+                        الاسترجاع والاسترداد
+                    </h2>
+                    
+                    <div class="faq-item" data-testid="faq-item-7">
+                        <button class="faq-question" data-testid="faq-question-7">
+                            <span>ما هي سياسة الاسترجاع؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نظراً لطبيعة المنتجات الرقمية، لا يمكن إرجاع المنتجات بعد استلام الكود. ولكن في حالة وجود مشكلة في الكود أو عدم عمله، نوفر ضمان استرجاع المال 100% أو استبدال فوري.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-8">
+                        <button class="faq-question" data-testid="faq-question-8">
+                            <span>كم يستغرق استرداد المبلغ؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>في حالة الموافقة على طلب الاسترداد، يتم معالجة الطلب خلال 24-48 ساعة. قد يستغرق ظهور المبلغ في حسابك البنكي من 3-7 أيام عمل حسب البنك الخاص بك.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-9">
+                        <button class="faq-question" data-testid="faq-question-9">
+                            <span>ماذا أفعل إذا لم يعمل الكود؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>تواصل معنا فوراً عبر واتساب أو البريد الإلكتروني مع رقم الطلب وصورة من رسالة الخطأ. سنقوم بحل المشكلة خلال دقائق إما بإرسال كود بديل أو استرداد المبلغ كاملاً.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product & Usage -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-gamepad"></i>
+                        المنتجات والاستخدام
+                    </h2>
+                    
+                    <div class="faq-item" data-testid="faq-item-10">
+                        <button class="faq-question" data-testid="faq-question-10">
+                            <span>كيف أستخدم بطاقات iTunes/Google Play؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>مع كل منتج نرسل لك تعليمات الاستخدام التفصيلية. بشكل عام:</p>
+                            <ul>
+                                <li><strong>iTunes:</strong> افتح App Store > اضغط على صورة حسابك > Redeem Gift Card > أدخل الكود</li>
+                                <li><strong>Google Play:</strong> افتح Play Store > القائمة > Redeem > أدخل الكود</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-11">
+                        <button class="faq-question" data-testid="faq-question-11">
+                            <span>هل البطاقات تعمل في جميع الدول؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>البطاقات المتوفرة لدينا خاصة بالمتجر السعودي. تأكد من أن حسابك مسجل في المملكة العربية السعودية. في حالة الشك، تواصل معنا قبل الشراء.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-12">
+                        <button class="faq-question" data-testid="faq-question-12">
+                            <span>هل هناك صلاحية للبطاقات؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>لا، جميع البطاقات الرقمية ليس لها تاريخ انتهاء صلاحية. يمكنك استخدامها في أي وقت تريد.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account & Support -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">
+                        <i class="fas fa-user-circle"></i>
+                        الحساب والدعم
+                    </h2>
+                    
+                    <div class="faq-item" data-testid="faq-item-13">
+                        <button class="faq-question" data-testid="faq-question-13">
+                            <span>هل يجب إنشاء حساب للشراء؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>لا، يمكنك الشراء كضيف. لكن ننصح بإنشاء حساب للحصول على مزايا إضافية مثل تتبع الطلبات، العروض الحصرية، وسهولة إعادة الشراء.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-14">
+                        <button class="faq-question" data-testid="faq-question-14">
+                            <span>كيف أتواصل مع خدمة العملاء؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>فريقنا متاح على مدار الساعة! يمكنك التواصل معنا عبر:</p>
+                            <ul>
+                                <li>واتساب: +966 50 123 4567</li>
+                                <li>البريد الإلكتروني: info@amoorystore.com</li>
+                                <li>تويتر: @AMOORY_STORE</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-testid="faq-item-15">
+                        <button class="faq-question" data-testid="faq-question-15">
+                            <span>هل تقدمون خصومات للعملاء الدائمين؟</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم! نقدم برنامج ولاء للعملاء مع نقاط مكافآت، خصومات خاصة، وعروض حصرية. اشترك في نشرتنا البريدية لتحصل على آخر العروض.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="help-section">
+                <div class="help-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h2 class="help-title">ما زلت بحاجة للمساعدة؟</h2>
+                <p class="help-text">فريقنا جاهز للإجابة على جميع استفساراتك على مدار الساعة</p>
+                <a href="https://wa.me/966501234567" target="_blank" class="btn btn-primary" data-testid="button-whatsapp-help">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل معنا عبر واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">AMOORY_STORE</h3>
+                    <p class="footer-desc">متجرك الموثوق لجميع البطاقات الرقمية والشحن الفوري</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Snapchat">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اتصل بنا</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+966 50 123 4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@amoorystore.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اشترك في النشرة البريدية</h4>
+                    <p class="footer-newsletter-desc">احصل على آخر العروض والتحديثات</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="البريد الإلكتروني" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-primary">اشترك</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 AMOORY_STORE. جميع الحقوق محفوظة</p>
+                <p class="footer-payment">طرق الدفع: مدى - فيزا - ماستر كارد</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">سلة التسوق</h3>
+                <button class="modal-close" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ريال</span>
+                </div>
+                <button class="btn btn-primary btn-block" onclick="goToCheckout()">إتمام الشراء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966501234567" 
+       target="_blank" 
+       class="whatsapp-float" 
+       onclick="openWhatsAppSupport(); return false;"
+       aria-label="تواصل معنا عبر واتساب">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

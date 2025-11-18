@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">تفاصيل المنتج - AMOORY_STORE</title>
+    <meta name="description" content="تفاصيل المنتج من متجر AMOORY_STORE لشحن شدات ببجي وبطاقات iTunes و PlayStation وجميع البطاقات الرقمية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-right">
+                    <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="logo">AMOORY_STORE</a>
+                </div>
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#categories" class="nav-link">الفئات</a>
+                    <a href="index.html#offers" class="nav-link">العروض</a>
+                    <a href="index.html#contact" class="nav-link">اتصل بنا</a>
+                </nav>
+
+                <div class="header-left">
+                    <div class="search-box">
+                        <input type="search" placeholder="ابحث عن المنتجات..." class="search-input" id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <button class="icon-btn search-btn-mobile" id="searchBtnMobile" aria-label="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html" class="breadcrumb-link">الرئيسية</a>
+                <span class="breadcrumb-separator">/</span>
+                <span id="breadcrumbCategory" class="breadcrumb-link">المنتجات</span>
+                <span class="breadcrumb-separator">/</span>
+                <span id="breadcrumbProduct" class="breadcrumb-current">تفاصيل المنتج</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="section product-details-section">
+        <div class="container">
+            <div class="product-details-grid">
+                <!-- Product Images -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img id="mainProductImage" src="" alt="صورة المنتج" class="main-product-image">
+                        <div id="productBadgeContainer"></div>
+                    </div>
+                    <div class="thumbnail-images" id="thumbnailImages">
+                        <!-- Thumbnails will be loaded by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-details-info">
+                    <h1 id="productName" class="product-details-name">اسم المنتج</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars" id="productStars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span id="ratingText" class="rating-text">(4.5 من 5 - 120 تقييم)</span>
+                    </div>
+
+                    <div class="product-details-price">
+                        <span id="currentPrice" class="current-price">0 ريال</span>
+                        <span id="originalPrice" class="original-price-detail"></span>
+                        <span id="discountBadge" class="discount-badge-detail"></span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3 class="description-title">وصف المنتج</h3>
+                        <p id="productDescription" class="description-text"></p>
+                    </div>
+
+                    <div class="product-features">
+                        <h3 class="features-title">المميزات</h3>
+                        <ul id="productFeatures" class="features-list">
+                            <!-- Features will be loaded by JavaScript -->
+                        </ul>
+                    </div>
+
+                    <div class="quantity-section">
+                        <label class="quantity-label">الكمية:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" id="decreaseQty" aria-label="تقليل الكمية">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="productQuantity" class="quantity-input" value="1" min="1" max="10">
+                            <button class="quantity-btn" id="increaseQty" aria-label="زيادة الكمية">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block add-to-cart-detail" id="addToCartDetail">
+                        <i class="fas fa-shopping-cart"></i>
+                        إضافة إلى السلة
+                    </button>
+
+                    <div class="product-guarantee">
+                        <div class="guarantee-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>ضمان استرجاع المال</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-lock"></i>
+                            <span>دفع آمن 100%</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>شحن فوري</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping & Usage Instructions -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="instructions-container">
+                <div class="instruction-card">
+                    <div class="instruction-header">
+                        <i class="fas fa-box-open instruction-icon"></i>
+                        <h3 class="instruction-title">تعليمات الشحن</h3>
+                    </div>
+                    <ul class="instruction-list">
+                        <li><i class="fas fa-check-circle"></i> الشحن يتم خلال 1-5 دقائق من تأكيد الطلب</li>
+                        <li><i class="fas fa-check-circle"></i> ستصلك رسالة تأكيد على البريد الإلكتروني</li>
+                        <li><i class="fas fa-check-circle"></i> يمكنك تتبع حالة الطلب من حسابك</li>
+                        <li><i class="fas fa-check-circle"></i> الدعم الفني متاح 24/7 للمساعدة</li>
+                    </ul>
+                </div>
+
+                <div class="instruction-card">
+                    <div class="instruction-header">
+                        <i class="fas fa-question-circle instruction-icon"></i>
+                        <h3 class="instruction-title">كيفية الاستخدام</h3>
+                    </div>
+                    <ul class="instruction-list" id="usageInstructions">
+                        <!-- Usage instructions will be loaded by JavaScript based on product type -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Products -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <i class="fas fa-layer-group section-icon"></i>
+                    <h2 class="section-title">منتجات مشابهة</h2>
+                </div>
+            </div>
+
+            <div class="products-grid" id="similarProducts">
+                <!-- Similar products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">AMOORY_STORE</h3>
+                    <p class="footer-text">متجرك الموثوق لجميع البطاقات الرقمية وشحن الألعاب بأفضل الأسعار وأسرع وقت</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Snapchat">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="#categories">الفئات</a></li>
+                        <li><a href="#offers">العروض</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">طرق الدفع</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-credit-card"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">تابعنا للحصول على العروض</h4>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="البريد الإلكتروني" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AMOORY_STORE. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-overlay" onclick="toggleCartModal()"></div>
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h3>سلة التسوق</h3>
+                <button class="cart-modal-close" onclick="toggleCartModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-modal-body" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ريال</span>
+                </div>
+                <button class="btn btn-primary btn-block">
+                    إتمام الطلب
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966501234567" 
+       target="_blank" 
+       class="whatsapp-float" 
+       onclick="openWhatsAppSupport(); return false;"
+       aria-label="تواصل معنا عبر واتساب">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize product details page
+        loadProductDetails();
+    </script>
+</body>
+</html>

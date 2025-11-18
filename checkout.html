@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - AMOORY_STORE</title>
+    <meta name="description" content="إتمام عملية الشراء في متجر AMOORY_STORE - شحن فوري وآمن 100%">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-right">
+                    <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="logo">AMOORY_STORE</a>
+                </div>
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#categories" class="nav-link">الفئات</a>
+                    <a href="index.html#offers" class="nav-link">العروض</a>
+                    <a href="index.html#contact" class="nav-link">اتصل بنا</a>
+                </nav>
+
+                <div class="header-left">
+                    <div class="search-box">
+                        <input type="search" placeholder="ابحث عن المنتجات..." class="search-input" id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <button class="icon-btn search-btn-mobile" id="searchBtnMobile" aria-label="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a>
+                <span class="breadcrumb-separator">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="breadcrumb-link">السلة</span>
+                <span class="breadcrumb-separator">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="breadcrumb-current">إتمام الطلب</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-header">
+                <h1 class="checkout-title">إتمام الطلب</h1>
+                <p class="checkout-subtitle">يرجى تعبئة بياناتك لإكمال عملية الشراء</p>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- Customer Information Form -->
+                <div class="checkout-main">
+                    <form id="checkoutForm" class="checkout-form">
+                        <!-- Customer Details -->
+                        <div class="form-section">
+                            <div class="form-section-header">
+                                <i class="fas fa-user form-section-icon"></i>
+                                <h2 class="form-section-title">بيانات العميل</h2>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName" class="form-label">
+                                        الاسم الكامل <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="fullName" 
+                                        name="fullName" 
+                                        class="form-input" 
+                                        placeholder="أدخل اسمك الكامل"
+                                        required
+                                    >
+                                    <span class="form-error" id="fullNameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">
+                                        رقم الجوال <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        class="form-input" 
+                                        placeholder="05xxxxxxxx"
+                                        required
+                                    >
+                                    <span class="form-error" id="phoneError"></span>
+                                </div>
+
+                                <div class="form-group form-group-full">
+                                    <label for="email" class="form-label">
+                                        البريد الإلكتروني <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="form-input" 
+                                        placeholder="example@email.com"
+                                        required
+                                    >
+                                    <span class="form-error" id="emailError"></span>
+                                </div>
+
+                                <div class="form-group form-group-full">
+                                    <label for="notes" class="form-label">
+                                        ملاحظات إضافية (اختياري)
+                                    </label>
+                                    <textarea 
+                                        id="notes" 
+                                        name="notes" 
+                                        class="form-textarea" 
+                                        rows="3" 
+                                        placeholder="أي ملاحظات خاصة بطلبك..."
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <div class="form-section-header">
+                                <i class="fas fa-credit-card form-section-icon"></i>
+                                <h2 class="form-section-title">طريقة الدفع</h2>
+                            </div>
+
+                            <div class="payment-methods">
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="mada" checked>
+                                    <div class="payment-method-card">
+                                        <i class="fas fa-credit-card payment-icon" style="color: #00a651;"></i>
+                                        <span class="payment-name">مدى</span>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="visa">
+                                    <div class="payment-method-card">
+                                        <i class="fab fa-cc-visa payment-icon" style="color: #1a1f71;"></i>
+                                        <span class="payment-name">فيزا</span>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="mastercard">
+                                    <div class="payment-method-card">
+                                        <i class="fab fa-cc-mastercard payment-icon" style="color: #eb001b;"></i>
+                                        <span class="payment-name">ماستر كارد</span>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="applepay">
+                                    <div class="payment-method-card">
+                                        <i class="fab fa-apple-pay payment-icon" style="color: #000;"></i>
+                                        <span class="payment-name">Apple Pay</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <span class="checkbox-text">
+                                    أوافق على 
+                                    <a href="#" class="terms-link">الشروط والأحكام</a>
+                                    و
+                                    <a href="#" class="terms-link">سياسة الخصوصية</a>
+                                    <span class="required">*</span>
+                                </span>
+                            </label>
+                            <span class="form-error" id="termsError"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-block btn-checkout">
+                            <i class="fas fa-lock"></i>
+                            تأكيد الطلب والدفع
+                        </button>
+
+                        <!-- Trust Signals -->
+                        <div class="checkout-trust">
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>دفع آمن ومشفر</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-clock"></i>
+                                <span>شحن فوري</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-undo"></i>
+                                <span>ضمان استرجاع المال</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <aside class="checkout-sidebar">
+                    <div class="order-summary">
+                        <h2 class="summary-title">ملخص الطلب</h2>
+                        
+                        <div id="orderItems" class="order-items">
+                            <!-- Items will be loaded by JavaScript -->
+                        </div>
+
+                        <div class="order-totals">
+                            <div class="order-total-row">
+                                <span>المجموع الفرعي:</span>
+                                <span id="subtotal">0 ريال</span>
+                            </div>
+                            <div class="order-total-row order-total-main">
+                                <span>المجموع الإجمالي:</span>
+                                <span id="totalPrice">0 ريال</span>
+                            </div>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="summary-trust">
+                            <div class="summary-trust-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>شحن فوري خلال دقائق</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>ضمان استرجاع المال 100%</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>دعم فني على مدار الساعة</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">AMOORY_STORE</h3>
+                    <p class="footer-desc">متجرك الموثوق لجميع البطاقات الرقمية والشحن الفوري</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Snapchat">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اتصل بنا</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+966 50 123 4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@amoorystore.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">اشترك في النشرة البريدية</h4>
+                    <p class="footer-newsletter-desc">احصل على آخر العروض والتحديثات</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="البريد الإلكتروني" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-primary">اشترك</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 AMOORY_STORE. جميع الحقوق محفوظة</p>
+                <p class="footer-payment">طرق الدفع: مدى - فيزا - ماستر كارد</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">سلة التسوق</h3>
+                <button class="modal-close" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ريال</span>
+                </div>
+                <button class="btn btn-primary btn-block" onclick="goToCheckout()">إتمام الشراء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966501234567" 
+       target="_blank" 
+       class="whatsapp-float" 
+       onclick="openWhatsAppSupport(); return false;"
+       aria-label="تواصل معنا عبر واتساب">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
